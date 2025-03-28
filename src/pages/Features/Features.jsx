@@ -15,7 +15,7 @@ const Features = () => {
             </div>
             <div className="features-dashbody">
 
-                <div className="box">
+                <div className="box" onClick={() => navigate('/healthgoal')}>
                     <h3>Health Goal Setting & Reminders</h3>
                 </div>
                 <div className="box">

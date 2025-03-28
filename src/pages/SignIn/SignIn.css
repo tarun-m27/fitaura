@@ -10,12 +10,15 @@
   background-color: #2c2c2c;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   color: white;
+  bottom: 30px;
 }
 
 .signin-container h2 {
   margin-bottom: 1rem;
   font-size: 1.8rem;
   font-weight: bold;
+  position: relative;
+  bottom: 30px;
 }
 
 .signin-input {

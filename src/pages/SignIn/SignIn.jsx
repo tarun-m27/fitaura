@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "../../App.css";
 import "./SignIn.css";
-import LogoHeader from "../../components/LogoHeader/LogoHeader";
+import Onlylogo from "../../components/Onlylogo/Onlylogo";
 
 const SignIn = () => {
   const [isRegister, setIsRegister] = useState(false);
@@ -23,7 +23,7 @@ const SignIn = () => {
 
   return (
     <>
-      <LogoHeader />
+      <Onlylogo />
       <div className="signin-container">
         <h2>{isRegister ? "Register" : "Sign In"}</h2>
         <form onSubmit={handleSubmit}>

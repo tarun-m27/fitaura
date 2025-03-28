@@ -32,7 +32,7 @@ const LogoHeader = () => {
           <li onClick={() => { navigate("/features"); setMenuOpen(false); }}>
             Features
           </li>
-          <li onClick={() => { navigate("/home"); setMenuOpen(false); }}>
+          <li onClick={() => { navigate("/"); setMenuOpen(false); }}>
             Logout
           </li>
         </ul>

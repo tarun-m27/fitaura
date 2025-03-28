@@ -17,6 +17,8 @@
     gap: 2rem;
     color: #fff;
     margin-right: 20px;
+    position: relative;
+    top: 20px;
   }
   
   .logoheader-header-menu>li:hover {

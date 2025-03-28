@@ -22,6 +22,10 @@ const Dashbody = () => {
         <div className='dashbody-body'>
             <div className='user-text'></div>
 
+            <div className='graph-box'>
+                <h2>Your Progress</h2>
+            </div>
+
             <div className='daily-checkin-box'>
                 <h2>Daily Check-In</h2>
 
@@ -61,9 +65,7 @@ const Dashbody = () => {
                 <button className="submit-btn" onClick={handleSubmit}>Submit</button>
             </div>
 
-            <div className='graph-box'>
-                <h2>Your Progress</h2>
-            </div>
+            
 
            
         </div>

@@ -1,5 +1,9 @@
+
+
 import React from "react";
 import "./Hero.css";
+import { Link } from 'react-router-dom'; // Make sure to import Link from react-router-dom
+
 import Header from "../Header/Header";
 
 import hero_image from "../../assets/hero_image.png";
@@ -76,16 +80,21 @@ const Hero = () => {
         </div>
 
         {/* hero buttons */}
+
         <div className="hero-buttons">
-          <button className="btn">Get Started</button>
-          <button className="btn">Learn More</button>
+            <button className="btn">Get Started</button>
+         
+            <button className="btn">Learn More</button>
+          
         </div>
+
+
       </div>
 
       <div className="right-h">
-      <button className="btn" onClick={() => navigate("/signin")}>
-      Join Now
-    </button>
+        <button className="btn" onClick={() => navigate("/signin")}>
+          Join Now
+        </button>
 
         <motion.div
           className="heart-rate"
