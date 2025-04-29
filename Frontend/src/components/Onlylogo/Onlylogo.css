@@ -1,0 +1,56 @@
+.only-logo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    padding: 0 2rem;
+    position: relative;
+    top: 60px;
+}
+
+/* Logo Styling */
+.logo {
+    margin-top: -100px;
+    width: 20rem;
+    height: 20rem;
+}
+
+/* Navigation Menu */
+.logo-header-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    color: #fff;
+    margin-right: 20px;
+    position: relative;
+    bottom: 70px;
+}
+
+.logo-header-menu-li {
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+}
+
+.logo-header-menu-li:hover {
+    color: var(--orange);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .logo-header-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 2rem;
+        background-color: var(--appColor);
+        padding: 1rem;
+        border-radius: 10px;
+        display: none; /* Initially hidden */
+    }
+
+    .logo-header-menu.active {
+        display: flex;
+    }
+}
