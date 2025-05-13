@@ -26,7 +26,7 @@ const LogoHeader = () => {
         </div>
       ) : (
         <ul className="logoheader-header-menu">
-          <li onClick={() => { navigate("/home"); setMenuOpen(false); }}>
+          <li onClick={() => { navigate("/"); setMenuOpen(false); }}>
             Home
           </li>
           <li onClick={() => { navigate("/features"); setMenuOpen(false); }}>

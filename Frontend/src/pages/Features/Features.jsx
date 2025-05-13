@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import './Features.css';
 import "../../App.css";
 import LogoHeader from '../../components/LogoHeader/LogoHeader';
+import mealPhoto from '../../assets/mealPhoto.jpg';
+import symptomPhoto from '../../assets/symptomPhoto.jpg';
+import workoutPhoto from '../../assets/workoutPhoto.jpg';
 
 const Features = () => {
     const navigate = useNavigate();
@@ -15,18 +18,20 @@ const Features = () => {
             </div>
             <div className="features-dashbody">
 
-                <div className="box" onClick={() => navigate('/healthgoal')}>
-                    <h3>Health Goal Setting & Reminders</h3>
-                </div>
-                <div className="box">
+
+                <div className="box" onClick={() => navigate('/mealplans')}>
+                    <img src={mealPhoto} alt="Meal Recommendations" className="box-image" />
                     <h3>Nutrition and Meal Recommendations</h3>
                 </div>
                 <div className="box" onClick={() => navigate('/symptoms')}>
+                    <img src={symptomPhoto} alt="Symptom Checker" className="box-image" />
                     <h3>Symptom Checker & Health Recommendations</h3>
                 </div>
-                <div className="box">
-                    <h3>Automated Health Risk Assessment</h3>
+                <div className="box" onClick={() => navigate('/workoutplan')}>
+                    <img src={workoutPhoto} alt="Workout Plan Generator" className="box-image" />
+                    <h3>Workout Plan Generator</h3>
                 </div>
+
             </div>
         </>
     );

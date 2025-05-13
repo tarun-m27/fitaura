@@ -92,8 +92,8 @@ const Hero = () => {
       </div>
 
       <div className="right-h">
-        <button className="btn" onClick={() => navigate("/signin")}>
-          Join Now
+        <button className="btn" onClick={() => navigate("/features")}>
+          Explore Now
         </button>
 
         <motion.div

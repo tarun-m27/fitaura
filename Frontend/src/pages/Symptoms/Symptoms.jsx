@@ -22,13 +22,33 @@ const Symptoms = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setResult({
-      disease: "Flu (Example)", 
-      recommendation: "Rest, Hydration, OTC meds (Example)",
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("http://localhost:5000/api/symptoms", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
-  };
+
+    const data = await response.json();
+
+    setResult({
+      disease: data.disease || "No prediction",
+      recommendation: data.recommendation || "No recommendation",
+    });
+  } catch (error) {
+    console.error("Prediction error:", error);
+    setResult({
+      disease: "Error",
+      recommendation: "Failed to get prediction from server",
+    });
+  }
+};
+
 
   return (
     <>
@@ -155,157 +175,3 @@ const Symptoms = () => {
 
 export default Symptoms;
 
-// import React, { useState } from "react";
-// import "./Symptoms.css";
-// import LogoHeader from "../../components/LogoHeader/LogoHeader";
-
-// const Symptoms = () => {
-//   const [formData, setFormData] = useState({
-//     primarySymptoms: "",
-//     symptomDuration: "",
-//     severityLevel: "Mild",
-//     affectedBodyParts: "",
-//     dietType: "",
-//     physicalActivity: "",
-//     sleepHours: "",
-//     travelHistory: "",
-//     exposure: "",
-//     medicationHistory: "",
-//   });
-
-//   const [result, setResult] = useState({ disease: "", recommendation: "" });
-
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-
-//     // Mock AI prediction (Replace this with actual AI model call)
-//     setResult({
-//       disease: "Flu (Example)", // Replace with AI-generated disease
-//       recommendation: "Rest, Hydration, OTC meds (Example)", // Replace with AI recommendations
-//     });
-//   };
-
-//   return (
-//     <>
-//       <LogoHeader />
-//       <h2>Symptom Checker & Health Recommendations</h2>
-
-
-//       <div className="symptoms-container">
-//         <div className="form-section">
-//           <form onSubmit={handleSubmit} className="symptoms-form">
-//             {/* Required Fields */}
-//             <nav>Primary Symptoms<input
-//               type="text"
-//               name="primarySymptoms"
-//               placeholder=" (Fever, cough, fatigue, headache, etc.)"
-//               value={formData.primarySymptoms}
-//               onChange={handleChange}
-//               className="symptom-input"
-//               required
-//             /></nav>
-            
-//             <input
-//               type="text"
-//               name="symptomDuration"
-//               placeholder="Symptom Duration (How long it has persisted)"
-//               value={formData.symptomDuration}
-//               onChange={handleChange}
-//               className="symptom-input"
-//               required
-//             />
-//             <select
-//               name="severityLevel"
-//               value={formData.severityLevel}
-//               onChange={handleChange}
-//               className="symptom-select"
-//               required
-//             >
-//               <option value="Mild">Mild</option>
-//               <option value="Moderate">Moderate</option>
-//               <option value="Severe">Severe</option>
-//             </select>
-//             <input
-//               type="text"
-//               name="affectedBodyParts"
-//               placeholder="Affected Body Parts (Head, Chest, Stomach, etc.)"
-//               value={formData.affectedBodyParts}
-//               onChange={handleChange}
-//               className="symptom-input"
-//               required
-//             />
-
-//             {/* Optional Fields */}
-//             <input
-//               type="text"
-//               name="dietType"
-//               placeholder="Diet Type (Optional)"
-//               value={formData.dietType}
-//               onChange={handleChange}
-//               className="symptom-input"
-//             />
-//             <input
-//               type="text"
-//               name="physicalActivity"
-//               placeholder="Physical Activity Level (Optional)"
-//               value={formData.physicalActivity}
-//               onChange={handleChange}
-//               className="symptom-input"
-//             />
-//             <input
-//               type="number"
-//               name="sleepHours"
-//               placeholder="Sleep Hours (Optional)"
-//               value={formData.sleepHours}
-//               onChange={handleChange}
-//               className="symptom-input"
-//             />
-//             <input
-//               type="text"
-//               name="travelHistory"
-//               placeholder="Recent Travel History (Optional)"
-//               value={formData.travelHistory}
-//               onChange={handleChange}
-//               className="symptom-input"
-//             />
-//             <input
-//               type="text"
-//               name="exposure"
-//               placeholder="Exposure to Sick People (Optional)"
-//               value={formData.exposure}
-//               onChange={handleChange}
-//               className="symptom-input"
-//             />
-//             <input
-//               type="text"
-//               name="medicationHistory"
-//               placeholder="Medication History (Optional)"
-//               value={formData.medicationHistory}
-//               onChange={handleChange}
-//               className="symptom-input"
-//             />
-
-//             <button type="submit" className="submit-btn">
-//               Submit
-//             </button>
-//           </form>
-//         </div>
-
-//         {/* {result.disease && ( */}
-//           <div className="output-box">
-//             <h3>Predicted Disease:</h3>
-//             <p>{result.disease}</p>
-//             <h3>Recommendation:</h3>
-//             <p>{result.recommendation}</p>
-//           </div>
-//         {/* )} */}
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Symptoms;

@@ -22,7 +22,8 @@
     text-align: center;
 }
 
-.box { 
+
+.box {
     width: 270px;
     height: 350px;
     background-color: var(--boxBg);
@@ -31,11 +32,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column; /* Aligns content vertically */
     font-size: 18px;
     font-weight: bold;
     color: var(--textColor);
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     cursor: pointer;
+    overflow: hidden; /* Ensures images stay inside the box */
+}
+
+.box-image {
+    width: 90%; /* Adjust this percentage for the image size */
+    height: 65%; /* Adjust the height of the image */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 8px; /* Optional: adds rounded corners to the image */
+    margin-bottom: 5px; /* Spacing between image and title */
 }
 
 .box:hover {

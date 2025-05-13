@@ -5,7 +5,8 @@ import SignIn from "./pages/SignIn/SignIn";
 import Home from "./pages/Home/Home";
 import Symptoms from "./pages/Symptoms/Symptoms"
 import Features from "./pages/Features/Features"
-import Healthgoal from "./pages/Healthgoal/Healthgoal";
+import MealPlans from "./pages/MealPlans/MealPlans";
+import WorkoutPlan from "./pages/WorkoutPlan/WorkoutPlan";
 import "./App.css";
 
 const App = () => {
@@ -18,7 +19,8 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/symptoms" element={<Symptoms />} />
         <Route path="/features" element={<Features />} />
-        <Route path="/healthgoal" element={<Healthgoal />} />
+        <Route path="/mealplans" element={<MealPlans />} />
+        <Route path="/workoutplan" element={<WorkoutPlan />} />
       </Routes>
     </Router>
   );

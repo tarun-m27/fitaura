@@ -28,7 +28,6 @@ Import Theme Variables
 
   .form-section {
     width: 45%;
-    width: 45%; /* Output box takes 45% of the space */
     padding: 1.5rem;
     background: var(--darkGrey);
     border-radius: 8px;
@@ -75,7 +74,19 @@ Import Theme Variables
     color: #3c3f45;
 }
   
-.symptom-input,
+.symptom-input{
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: var(--darkGrey);
+  color: white;
+  font-size: 1rem;
+  width: 41%; /* Adjust width as needed */
+  max-width: 400px; /* Prevents it from being too wide */
+  outline: none;
+  text-align: center; /* Centers text inside inputs */
+}
+
 .symptom-select {
   padding: 12px;
   border: none;
@@ -83,7 +94,7 @@ Import Theme Variables
   background: var(--darkGrey);
   color: white;
   font-size: 1rem;
-  width: 80%; /* Adjust width as needed */
+  width: 70%; /* Adjust width as needed */
   max-width: 400px; /* Prevents it from being too wide */
   outline: none;
   text-align: center; /* Centers text inside inputs */
@@ -156,7 +167,7 @@ Import Theme Variables
   
   .symptom-field label {
     width: 50%;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     color: #464D53;
     ;

@@ -44,7 +44,7 @@
 .team-box {
   margin-right: 20px;
   margin-left: 20px;
-  height: 250px;
+  height: 280px;
   width: 230px;
   background-color: #333;
   color: white;
@@ -60,8 +60,8 @@
 }
 
 .team-img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid white;
